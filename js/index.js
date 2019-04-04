@@ -443,6 +443,32 @@ $(function(){
 	
 })
 
+//商品区11 猜你喜欢
+$(function(){
+	$.ajax({
+		url:"../json/goods.json",
+		success:function(data){
+			
+			var arr = data;
+			for(var i = 0; i < arr[10].data.length; i++){
+				var str = $(`<li>
+					<dl>
+						<dd><img src="${arr[10].data[i].img}" alt="${arr[10].data[i].title}" /></dd>
+						<dt><a href="">${arr[10].data[i].title}</a></dt>
+						<dt>
+							<span>￥${arr[10].data[i].money}</span>
+							<a href="">❤ 收藏</a>
+						</dt>
+					</dl>
+				</li>`)
+				str.appendTo(".guess_you__like_box .goods")
+			}
+		},
+		error:function(error){
+			alert(error)
+		}
+	})
+})
 //左侧浮动导航
 $(function(){
 	var offsetY = ($(window).height() - $(".left_float_nav").height()) / 2
@@ -489,7 +515,8 @@ $(function(){
 		bck(Top(".goods_box6"),Top(".goods_box7"),3)
 		bck(Top(".goods_box7"),Top(".goods_box8"),4)
 		bck(Top(".goods_box8"),Top(".goods_box9"),5)
-		bck(Top(".goods_box9"),Top(".goods_box9"),6)
+		bck(Top(".goods_box9"),Top(".guess_you__like_box"),6)
+		//bck(Top(".guess_you__like_box"),Top($(window).height()),6)
 		
 	})
 	
