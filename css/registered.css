@@ -1,0 +1,171 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: n; }
+
+a {
+  text-decoration: none; }
+
+/*头部*/
+.header_box {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden; }
+  .header_box .header {
+    width: 1190px;
+    margin: 0 auto; }
+    .header_box .header .logo {
+      width: 160px;
+      height: 50px;
+      float: left; }
+      .header_box .header .logo img {
+        width: 100%;
+        height: 100%; }
+    .header_box .header span {
+      width: 1px;
+      height: 50px;
+      display: inline-block;
+      border-left: 1px solid #404040;
+      float: left;
+      margin: 0 15px; }
+    .header_box .header .txt {
+      height: 50px;
+      line-height: 50px;
+      float: left;
+      font-size: 30px; }
+
+/*登陆注册*/
+.center_box {
+  width: 100%;
+  background: url("//img.iblimg.com/respc-1/resources/v3.0/css/i/login-body.jpg") no-repeat;
+  margin-top: 20px; }
+  .center_box .center {
+    width: 950px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    overflow: hidden; }
+    .center_box .center .registerde_top {
+      padding: 0 10px;
+      border-bottom: 1px solid #ccc;
+      line-height: 50px;
+      width: 100%;
+      overflow: hidden; }
+      .center_box .center .registerde_top .title {
+        float: left;
+        color: red; }
+      .center_box .center .registerde_top .landing {
+        float: right;
+        font-size: 12px; }
+    .center_box .center .registerde_bottom {
+      padding-left: 300px;
+      padding-top: 50px; }
+      .center_box .center .registerde_bottom input {
+        width: 230px;
+        height: 30px;
+        float: left; }
+      .center_box .center .registerde_bottom .sms_code {
+        display: block; }
+      .center_box .center .registerde_bottom span {
+        font-size: 12px;
+        color: #999;
+        float: left;
+        margin-left: 5px;
+        display: none; }
+      .center_box .center .registerde_bottom .txt {
+        float: left;
+        width: 120px;
+        text-align: right; }
+      .center_box .center .registerde_bottom .box {
+        overflow: hidden;
+        line-height: 30px;
+        margin: 20px 0; }
+      .center_box .center .registerde_bottom .intensity {
+        float: left;
+        margin-left: 10px;
+        display: none; }
+        .center_box .center .registerde_bottom .intensity div {
+          float: left;
+          margin: 0 3px;
+          width: 25px;
+          height: 25px;
+          background: gray;
+          text-align: center;
+          line-height: 25px; }
+      .center_box .center .registerde_bottom .code {
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+        background: gray;
+        color: lawngreen;
+        text-align: center; }
+      .center_box .center .registerde_bottom .VerificationCode_prompt {
+        color: deepskyblue;
+        cursor: pointer; }
+      .center_box .center .registerde_bottom .sms_code {
+        width: 50px;
+        height: 28px;
+        background: #E4E4E4;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid #00BFFF; }
+      .center_box .center .registerde_bottom .VerificationCode, .center_box .center .registerde_bottom .sms {
+        width: 175px; }
+      .center_box .center .registerde_bottom #btn {
+        margin-left: 122px;
+        width: 230px;
+        height: 30px;
+        border: 0;
+        color: #fff;
+        background: #FA2244;
+        margin-top: 20px;
+        margin-bottom: 50px; }
+
+/*底部*/
+.footer_nav_box {
+  width: 100%;
+  background: #f4f4f4;
+  overflow: hidden;
+  margin-top: 40px; }
+  .footer_nav_box .footer_nav {
+    width: 1190px;
+    margin: 0 auto; }
+    .footer_nav_box .footer_nav .top_nav {
+      overflow: hidden; }
+      .footer_nav_box .footer_nav .top_nav .nav {
+        float: left;
+        padding: 20px 50px; }
+        .footer_nav_box .footer_nav .top_nav .nav .nav_title .iconfont {
+          margin-right: 10px;
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          font-size: 30px;
+          color: #fff;
+          background: black;
+          border-radius: 50%; }
+        .footer_nav_box .footer_nav .top_nav .nav ul {
+          margin-left: 50px; }
+          .footer_nav_box .footer_nav .top_nav .nav ul li {
+            margin: 5px; }
+            .footer_nav_box .footer_nav .top_nav .nav ul li a {
+              font-size: 12px;
+              color: #666; }
+    .footer_nav_box .footer_nav .bottom_nav {
+      text-align: center;
+      font-size: 12px; }
+      .footer_nav_box .footer_nav .bottom_nav div {
+        padding: 5px 0;
+        line-height: 12px; }
+        .footer_nav_box .footer_nav .bottom_nav div a {
+          margin: 0 5px;
+          color: #333; }
+        .footer_nav_box .footer_nav .bottom_nav div img {
+          width: 20px;
+          height: 21px; }
+      .footer_nav_box .footer_nav .bottom_nav div:last-child {
+        line-height: 20px; }

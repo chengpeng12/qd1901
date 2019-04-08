@@ -1462,7 +1462,7 @@ a {
         float: right;
         color: #ccc; }
 
-/*猜你喜欢*/
+/*底部*/
 .footer_nav_box {
   width: 100%;
   background: #f4f4f4;
@@ -1636,18 +1636,19 @@ a {
     text-align: center;
     margin-top: 20px;
     position: relative;
-    cursor: pointer;
-    transition: all 0.3s; }
-    .right_shopping_box .Qr_code:hover {
-      transition: all 0.3s;
-      background: red; }
-      .right_shopping_box .Qr_code:hover ul {
-        opacity: 1;
-        left: -145px; }
+    cursor: pointer; }
     .right_shopping_box .Qr_code .iconfont {
       font-size: 30px;
       height: 40px;
-      line-height: 40px; }
+      line-height: 40px;
+      transition: all 0.3s; }
+      .right_shopping_box .Qr_code .iconfont:hover {
+        transition: all 0.3s; }
+        .right_shopping_box .Qr_code .iconfont:hover .Qr_code {
+          background: red; }
+        .right_shopping_box .Qr_code .iconfont:hover ul {
+          opacity: 1;
+          left: -145px; }
     .right_shopping_box .Qr_code ul {
       width: 135px;
       height: 140px;
