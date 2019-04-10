@@ -1510,166 +1510,298 @@ a {
         line-height: 20px; }
 
 /*右侧购物栏*/
-.right_shopping_box {
-  width: 40px;
+.right_shopping {
+  width: 300px;
   height: 100%;
-  background: #333;
   position: fixed;
-  right: 0;
+  right: -260px;
   top: 0;
-  z-index: 999;
-  /*我的*/
-  /*购物车*/
-  /*收藏*/
-  /*历史记录*/
-  /*二维码*/ }
-  .right_shopping_box .me {
-    margin-top: 100px;
+  z-index: 999; }
+  .right_shopping .right_shopping_left {
     width: 40px;
-    height: 40px;
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    line-height: 40px; }
-    .right_shopping_box .me:hover {
-      background: red; }
-      .right_shopping_box .me:hover span {
-        top: 0;
-        opacity: 1;
-        transition: all 0.3s;
-        left: -83px; }
-    .right_shopping_box .me .iconfont {
-      font-size: 30px;
+    height: 100%;
+    background: #333;
+    padding-top: 100px;
+    float: left;
+    /*我的*/
+    /*购物车*/
+    /*收藏*/
+    /*历史记录*/
+    /*二维码*/ }
+    .right_shopping .right_shopping_left .me {
+      width: 40px;
       height: 40px;
-      color: #fff; }
-    .right_shopping_box .me span {
-      color: #666;
-      opacity: 0;
-      top: 0;
-      width: 80px;
-      border: 1px solid #ccc;
-      position: absolute;
-      left: -100px; }
-  .right_shopping_box .shopping_car {
-    color: #fff;
-    text-align: center;
-    margin-top: 40px;
-    cursor: pointer;
-    transition: all 0.5s;
-    padding: 15px 0; }
-    .right_shopping_box .shopping_car:hover {
-      transition: all 0.5s;
-      background: red; }
-    .right_shopping_box .shopping_car .iconfont {
-      font-size: 30px;
-      height: 40px; }
-    .right_shopping_box .shopping_car div {
-      padding: 0 13px;
-      font-size: 14px;
-      margin: 10px 0; }
-    .right_shopping_box .shopping_car span {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
-      border-radius: 50%;
-      background: red; }
-  .right_shopping_box .collection {
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s; }
-    .right_shopping_box .collection:hover {
-      transition: all 0.3s;
-      background: red; }
-      .right_shopping_box .collection:hover span {
-        left: -102px;
-        opacity: 1; }
-    .right_shopping_box .collection .iconfont {
-      font-size: 20px;
-      height: 40px;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s;
       line-height: 40px; }
-    .right_shopping_box .collection span {
-      transition: all 0.3s;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      width: 100px;
-      left: -120px;
-      border: 1px solid #ccc;
-      color: #666;
-      height: 35px;
-      line-height: 35px; }
-  .right_shopping_box .history {
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s; }
-    .right_shopping_box .history:hover {
-      transition: all 0.3s;
-      background: red; }
-      .right_shopping_box .history:hover span {
-        left: -102px;
-        opacity: 1; }
-    .right_shopping_box .history .iconfont {
-      font-size: 20px;
-      height: 40px;
-      line-height: 40px; }
-    .right_shopping_box .history span {
-      transition: all 0.3s;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      width: 100px;
-      left: -120px;
-      border: 1px solid #ccc;
-      color: #666;
-      height: 35px;
-      line-height: 35px; }
-  .right_shopping_box .Qr_code {
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    position: relative;
-    cursor: pointer; }
-    .right_shopping_box .Qr_code .iconfont {
-      font-size: 30px;
-      height: 40px;
-      line-height: 40px;
-      transition: all 0.3s; }
-      .right_shopping_box .Qr_code .iconfont:hover {
-        transition: all 0.3s; }
-        .right_shopping_box .Qr_code .iconfont:hover .Qr_code {
-          background: red; }
-        .right_shopping_box .Qr_code .iconfont:hover ul {
+      .right_shopping .right_shopping_left .me:hover {
+        background: red; }
+        .right_shopping .right_shopping_left .me:hover span {
+          top: 0;
           opacity: 1;
-          left: -145px; }
-    .right_shopping_box .Qr_code ul {
-      width: 135px;
-      height: 140px;
-      transition: all 0.3s;
-      opacity: 0;
-      position: absolute;
-      top: -60px;
-      width: 100px;
-      left: -180px;
-      border: 1px solid #ccc;
-      padding: 15px; }
-      .right_shopping_box .Qr_code ul li:first-child {
-        width: 100%;
+          transition: all 0.3s;
+          left: -83px; }
+      .right_shopping .right_shopping_left .me .iconfont {
+        font-size: 30px;
+        height: 40px;
+        color: #fff; }
+      .right_shopping .right_shopping_left .me span {
+        color: #666;
+        opacity: 0;
+        top: 0;
+        width: 80px;
+        border: 1px solid #ccc;
+        position: absolute;
+        left: -100px; }
+    .right_shopping .right_shopping_left .shopping_car {
+      color: #fff;
+      text-align: center;
+      margin-top: 40px;
+      cursor: pointer;
+      transition: all 0.5s;
+      padding: 15px 0; }
+      .right_shopping .right_shopping_left .shopping_car:hover {
+        transition: all 0.5s;
+        background: red; }
+      .right_shopping .right_shopping_left .shopping_car .iconfont {
+        font-size: 30px;
+        height: 40px; }
+      .right_shopping .right_shopping_left .shopping_car div {
+        padding: 0 13px;
+        font-size: 14px;
+        margin: 10px 0; }
+      .right_shopping .right_shopping_left .shopping_car span {
+        display: inline-block;
+        width: 20px;
         height: 20px;
         line-height: 20px;
-        margin-top: 10px;
-        color: #666; }
-        .right_shopping_box .Qr_code ul li:first-child .iconfont {
-          font-size: 20px; }
-      .right_shopping_box .Qr_code ul li:last-child {
-        margin-top: 10px; }
-        .right_shopping_box .Qr_code ul li:last-child img {
+        border-radius: 50%;
+        background: red; }
+    .right_shopping .right_shopping_left .collection {
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s; }
+      .right_shopping .right_shopping_left .collection:hover {
+        transition: all 0.3s;
+        background: red; }
+        .right_shopping .right_shopping_left .collection:hover span {
+          left: -102px;
+          opacity: 1; }
+      .right_shopping .right_shopping_left .collection .iconfont {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px; }
+      .right_shopping .right_shopping_left .collection span {
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100px;
+        left: -120px;
+        border: 1px solid #ccc;
+        color: #666;
+        height: 35px;
+        line-height: 35px; }
+    .right_shopping .right_shopping_left .history {
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s; }
+      .right_shopping .right_shopping_left .history:hover {
+        transition: all 0.3s;
+        background: red; }
+        .right_shopping .right_shopping_left .history:hover span {
+          left: -102px;
+          opacity: 1; }
+      .right_shopping .right_shopping_left .history .iconfont {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px; }
+      .right_shopping .right_shopping_left .history span {
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100px;
+        left: -120px;
+        border: 1px solid #ccc;
+        color: #666;
+        height: 35px;
+        line-height: 35px; }
+    .right_shopping .right_shopping_left .Qr_code {
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      cursor: pointer; }
+      .right_shopping .right_shopping_left .Qr_code .iconfont {
+        font-size: 30px;
+        height: 40px;
+        line-height: 40px;
+        transition: all 0.3s; }
+        .right_shopping .right_shopping_left .Qr_code .iconfont:hover {
+          transition: all 0.3s; }
+          .right_shopping .right_shopping_left .Qr_code .iconfont:hover .Qr_code {
+            background: red; }
+          .right_shopping .right_shopping_left .Qr_code .iconfont:hover ul {
+            opacity: 1;
+            left: -145px; }
+      .right_shopping .right_shopping_left .Qr_code ul {
+        width: 135px;
+        height: 140px;
+        transition: all 0.3s;
+        opacity: 0;
+        position: absolute;
+        top: -60px;
+        width: 100px;
+        left: -180px;
+        border: 1px solid #ccc;
+        padding: 15px; }
+        .right_shopping .right_shopping_left .Qr_code ul li:first-child {
           width: 100%;
-          height: 100%; }
+          height: 20px;
+          line-height: 20px;
+          margin-top: 10px;
+          color: #666; }
+          .right_shopping .right_shopping_left .Qr_code ul li:first-child .iconfont {
+            font-size: 20px; }
+        .right_shopping .right_shopping_left .Qr_code ul li:last-child {
+          margin-top: 10px; }
+          .right_shopping .right_shopping_left .Qr_code ul li:last-child img {
+            width: 100%;
+            height: 100%; }
+  .right_shopping .right_shopping_right {
+    background: #fff;
+    width: 260px;
+    height: 100%;
+    float: right; }
+    .right_shopping .right_shopping_right .car_top {
+      width: 260px;
+      height: 5%;
+      background: #f2f2f2;
+      position: absolute;
+      right: 0; }
+      .right_shopping .right_shopping_right .car_top .go_back {
+        font-size: 24px;
+        color: #999;
+        float: left;
+        margin-left: 10px;
+        height: 100%;
+        line-height: 42px;
+        cursor: pointer; }
+      .right_shopping .right_shopping_right .car_top .iconfont {
+        font-size: 28px;
+        color: #999;
+        float: right;
+        height: 100%;
+        line-height: 42px;
+        cursor: pointer; }
+    .right_shopping .right_shopping_right .car_center {
+      width: 260px;
+      height: 85%;
+      position: absolute;
+      right: 0;
+      top: 5%;
+      background: #fff;
+      overflow: auto; }
+      .right_shopping .right_shopping_right .car_center .goods {
+        width: 250px;
+        height: 50px;
+        padding: 10px 0 10px 10px;
+        position: relative; }
+        .right_shopping .right_shopping_right .car_center .goods:hover {
+          background: #f2f2f2; }
+          .right_shopping .right_shopping_right .car_center .goods:hover .unit_price {
+            display: none; }
+          .right_shopping .right_shopping_right .car_center .goods:hover .goods_txt .sum {
+            display: block; }
+          .right_shopping .right_shopping_right .car_center .goods:hover .remove_goods {
+            display: block; }
+        .right_shopping .right_shopping_right .car_center .goods .goods_img {
+          width: 48px;
+          height: 48px;
+          border: 1px solid #666;
+          float: left; }
+          .right_shopping .right_shopping_right .car_center .goods .goods_img img {
+            width: 100%;
+            height: 100%; }
+        .right_shopping .right_shopping_right .car_center .goods .goods_txt {
+          float: left;
+          width: 96px;
+          height: 50px;
+          padding-left: 4px;
+          font-size: 12px; }
+          .right_shopping .right_shopping_right .car_center .goods .goods_txt .txt {
+            color: #333333; }
+            .right_shopping .right_shopping_right .car_center .goods .goods_txt .txt:hover {
+              color: orangered; }
+          .right_shopping .right_shopping_right .car_center .goods .goods_txt .sum {
+            display: none; }
+            .right_shopping .right_shopping_right .car_center .goods .goods_txt .sum button {
+              cursor: pointer;
+              width: 15px;
+              height: 15px;
+              border: 0;
+              border-radius: 50%;
+              background: #ccc;
+              color: #666;
+              outline: none; }
+              .right_shopping .right_shopping_right .car_center .goods .goods_txt .sum button:hover {
+                background: #666;
+                color: #ccc; }
+        .right_shopping .right_shopping_right .car_center .goods .goods_money {
+          float: right;
+          color: red;
+          font-size: 12px; }
+        .right_shopping .right_shopping_right .car_center .goods .remove_goods {
+          outline: none;
+          display: none;
+          cursor: pointer;
+          width: 15px;
+          height: 15px;
+          border: 0;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 10px;
+          right: 15px;
+          background: #ccc;
+          color: 666; }
+    .right_shopping .right_shopping_right .car_bottom {
+      width: 260px;
+      height: 15%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: #f2f2f2; }
+      .right_shopping .right_shopping_right .car_bottom .count {
+        height: 30%;
+        font-size: 12px; }
+        .right_shopping .right_shopping_right .car_bottom .count .num {
+          float: left;
+          margin-top: 10px; }
+          .right_shopping .right_shopping_right .car_bottom .count .num span {
+            color: red; }
+        .right_shopping .right_shopping_right .car_bottom .count .sum_money {
+          margin-top: 10px;
+          float: left;
+          margin-left: 10px; }
+          .right_shopping .right_shopping_right .car_bottom .count .sum_money span {
+            color: red; }
+      .right_shopping .right_shopping_right .car_bottom .look_car {
+        height: 70%; }
+        .right_shopping .right_shopping_right .car_bottom .look_car button {
+          width: 160px;
+          height: 30px;
+          border: 0;
+          background: red;
+          color: #fff;
+          margin: 15px 50px;
+          cursor: pointer;
+          outline: none; }

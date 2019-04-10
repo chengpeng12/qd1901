@@ -140,11 +140,11 @@ $(function(){
 	
 	//点击注册
 	$(".registered").click(function(){
-		/*if($(".username_prompt").html() != "恭喜，可以注册" || $(".password_prompt").html() != "密码安全" || $(".newPasswoed_prompt").html() != "密码正确" || $(".phone_prompt").html() != "手机号格式正确" || $(".code_prompt").html() != "验证码正确" || $(".email_pormpt").html() != "邮箱验证成功"){
+		if($(".username_prompt").html() != "恭喜，可以注册" || $(".password_prompt").html() != "密码安全" || $(".newPasswoed_prompt").html() != "密码正确" || $(".phone_prompt").html() != "手机号格式正确" || $(".code_prompt").html() != "验证码正确" || $(".email_pormpt").html() != "邮箱验证成功"){
 			alert("请检查填写信息是否正确")
-		}else{*/
+		}else{
 			var str = getStr(".registerde_bottom"); 
-			
+			/*alert("成功")*/
 			$.ajax({
 				type:"POST",
 				url:"../php/registered.php",
@@ -157,7 +157,7 @@ $(function(){
 				}
 			})
 			
-		/*}*/
+		}
 	})
 	
 })

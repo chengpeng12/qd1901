@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="css/iconfont.css" />
 		<script src="js/jquery-1.11.3.js"></script>
 		<script src="js/index.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+	<!--	<script type="text/javascript" src="js/require.js" defer async="true" data-main="index_main"></script>-->
 	</head>
 	<body>
 	<!--头部浮动搜索框-->
@@ -201,7 +203,6 @@
 				<li><img src="http://img22.iblimg.com/market-2/images/activity/412518876.jpg" alt="" /></li>
 				<li><img src="http://img23.iblimg.com/market-2/images/activity/1584511878.jpg" alt="" /></li>
 				<li><img src="http://img23.iblimg.com/market-2/images/activity/410153767.jpg" alt="" /></li>
-				<li><img src="http://img23.iblimg.com/market-2/images/activity/385270514.jpg" alt="" /></li>
 				<div class="carousel_nav">
 					<span class="active"></span>
 					<span></span>
@@ -529,39 +530,87 @@
 		<li>TOP</li>
 	</ul>
 	<!--又侧购物栏-->
-	<div class="right_shopping_box">
-		<div class="me">
-			<i class="iconfont">&#xe8a0;</i>
-			<span>我的信息</span>
+	<div class="right_shopping">
+		<div class="right_shopping_left">
+			<div class="me">
+				<i class="iconfont">&#xe8a0;</i>
+				<span>我的信息</span>
+			</div>
+			<div class="shopping_car">
+				<i class="iconfont">&#xe61b;</i>
+				<div>我的购物车</div>
+				<span>0</span>
+			</div>
+			<div class="collection">
+				<i class="iconfont">&#xe66c;</i>
+				<span>我的收藏</span>
+			</div>
+			<div class="history">
+				<i class="iconfont">&#xe659;</i>
+				<span>历史记录</span>
+			</div>
+			<div class="Qr_code">
+				<i class="iconfont">&#xe630;</i>
+				<ul>
+					<li>
+					<i class="iconfont">&#xe65d;</i>
+					<span>手机专享</span>
+					</li>
+					<li>
+						<img src="//img22.iblimg.com/market-2/images/activity/1849148942.png" alt="" />
+					</li>
+				</ul>
+			</div>
+			<div class="Customer_service">
+				<i class="iconfont">&#xf0149;</i>
+				<span>我的客服</span>
+			</div>
 		</div>
-		<div class="shopping_car">
-			<i class="iconfont">&#xe61b;</i>
-			<div>我的购物车</div>
-			<span>0</span>
-		</div>
-		<div class="collection">
-			<i class="iconfont">&#xe66c;</i>
-			<span>我的收藏</span>
-		</div>
-		<div class="history">
-			<i class="iconfont">&#xe659;</i>
-			<span>历史记录</span>
-		</div>
-		<div class="Qr_code">
-			<i class="iconfont">&#xe630;</i>
-			<ul>
-				<li>
-				<i class="iconfont">&#xe65d;</i>
-				<span>手机专享</span>
-				</li>
-				<li>
-					<img src="//img22.iblimg.com/market-2/images/activity/1849148942.png" alt="" />
-				</li>
+		<!--购物车右侧-->
+		<div class="right_shopping_right">
+			<div class="car_top">
+				<div class="go_back">》</div>
+				<div class="car_logo iconfont">&#xe61b;</div>
+			</div>
+			<ul class="car_center">
+				<!--<li class="goods">
+					<div class="goods_img">
+						<img src="http://Img.iblimg.com/photo-42//1855740988_200x200.jpg" alt="" />
+					</div>
+					<div class="goods_txt">
+						<div class="txt">这里是关于物品的一些描述</div>
+						<div class="unit_price">
+							<span class="money">168</span>
+							x
+							<span class="txt_num">3</span>
+						</div>
+						<div class="sum">
+							<button class="add">+</button>
+							<span class="num">3</span>
+							<button class="minus">-</button>
+						</div>
+					</div>
+					<div class="goods_money">
+						￥198.00
+					</div>
+					<button class="remove_goods">X</button>
+				</li>-->
 			</ul>
-		</div>
-		<div class="Customer_service">
-			<i class="iconfont">&#xf0149;</i>
-			<span>我的客服</span>
+			<div class="car_bottom">
+				<div class="count">
+					<div class="num">
+						共
+						<span>10</span>
+						件商品
+					</div>
+					<div class="sum_money">
+						总计：<span>￥1999</span>					
+					</div>
+				</div>
+				<div class="look_car">
+					<button>查看购物车</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!--猜你喜欢-->

@@ -111,6 +111,9 @@ $(function(){
 	$(".carousel_box .carousel .carousel_nav span").mouseout(function(){
 		start()
 	})
+	$(".carousel_box2 .carousel").mouseenter(function(){
+		clearInterval(time);
+	})
 	//通过计时器 自动播放轮播图
 	function start(){
 		clearInterval(time);
@@ -120,12 +123,11 @@ $(function(){
 			$(".carousel_box .carousel .carousel_nav span").eq(inow).attr("class","active")
 			$(".carousel_box .carousel li").stop().animate({opacity:0},1000)
 			$(".carousel_box .carousel li").eq(inow).stop().animate({opacity:1},1000,function(){
-				if(inow == osize){
-					inow = 0;
-					$(".carousel_box .carousel .carousel_nav span").eq(inow).attr("class","active")
-					$(".carousel_box .carousel li").eq(inow).stop().animate({opacity:1},1000)
-				}
 			})
+			if(inow == osize){
+					inow = -1;
+					start()
+				}
 		},2000)	
 	}	
 })
@@ -216,7 +218,7 @@ $(function(){
 			for(var i = 0;i < arr[0].r_img.length;i++){
 				var str = `
 						<div>
-							<img src="${arr[0].r_img[i].img}" alt="" />
+							<a href="html/goods.html"><img src="${arr[0].r_img[i].img}" alt="" /></a>
 						</div>
 						<span class="txt">${arr[0].r_img[i].txt}</span>
 						<span class="money">￥${arr[0].r_img[i].money}</span>
@@ -518,15 +520,27 @@ $(function(){
 		bck(Top(".goods_box9"),Top(".guess_you__like_box"),6)
 		//bck(Top(".guess_you__like_box"),Top($(window).height()),6)
 		
-	})
-	
-	
-	
-		
-		
+	})	
 })
 	
-	
+//右侧购物车
+$(function(){
+	var isYes = false;
+	$(".right_shopping .shopping_car").click(function(){
+		if(!isYes){
+			$(".right_shopping").stop().animate({right:0},300,function(){
+				isYes = true;
+			})
+			
+		}
+		if(isYes){
+			$(".right_shopping").stop().animate({right:-260},300,function(){
+				isYes = false;
+			})
+			
+		}
+	})
+})
 	
 	
 
@@ -581,24 +595,206 @@ function slideshow(node){
 			inow++;
 			$(node +" .slideshowBtn li").find("span").css("width",0)
 			//将鼠标滑过的按钮宽度设为40px
-			$(node +" .slideshowBtn li").eq(inow).find("span").stop().animate({width:40},3100,function(){
+			$(node +" .slideshowBtn li").eq(inow).find("span").stop().animate({width:40},3000,function(){
 				$(node +" .slideshowBtn li").find("span").css("width",0)
 				
 			})
 		
 			$(node +" .slideshow").stop().animate({
 					left: -$(node +" .slideshow li").width() * inow
-			},500,function(){
-					if(inow >= totalSize - 1){
-						inow = 0;
-						$(node +" .slideshowBtn li").eq(inow).find("span").stop().animate({width:40},1800,function(){
-							$(node +" .slideshowBtn li").find("span").css("width",0)
-							
-						})
-						$(node +" .slideshow").css("left",0)
+			},500)
+			if(inow == totalSize - 2){
+						inow = -1;
+						start()
 					}
-				})
 		},3000)
 	}
 	
 	}
+
+//为购物车添加商品
+	$(function(){
+		count()
+		$.ajax({
+				url:"../json/shopping.json",
+				success:function(data){
+					var cookieStr = $.cookie("goods");
+					var arr = eval(cookieStr)
+					$(".car_center").html("")
+					var sum = 0;
+					
+					for(var i = 0;i < arr.length;i++){
+						for(var j = 0; j < data.length;j++){
+							for(var k = 0;k < data[j].goods.length;k++){
+								var money = data[j].goods[k].money
+								money = money.substring(1,money.length)
+								money = parseFloat(arr[i].num) *  parseFloat(money);
+								sum += money;					
+				
+								car()
+							}
+						}
+						
+					}
+					$(".car_bottom .sum_money").html("￥" + parseFloat(sum))
+				},
+				error:function(error){
+					alert(error)
+				}
+			})
+		})
+		
+		function car(){
+			$(".car_center").html("")
+			if($.cookie("goods")){
+				$.ajax({
+				url:"../json/shopping.json",
+				success:function(data){
+					var cookieStr = $.cookie("goods");
+					var arr = eval(cookieStr)
+					$(".car_center").html("")
+					var sum = 0;
+					for(var i = 0;i < arr.length;i++){
+						for(var j = 0; j < data.length;j++){
+							for(var k = 0;k < data[j].goods.length;k++){
+								if(data[j].goods[k].id == arr[i].id){
+									var money = data[j].goods[k].money
+									money = money.substring(1,money.length)
+									money = arr[i].num * money									
+									sum += money;										
+									$(`
+										<li class="goods">
+											<div class="goods_img">
+												<img src="${data[j].goods[k].img}" alt="" />
+											</div>
+											<div class="goods_txt">
+												<div class="txt">${data[j].goods[k].txt[0]}</div>
+												<div class="unit_price">
+													<span class="money">${data[j].goods[k].money}</span>
+													x
+													<span class="txt_num">${arr[i].num}</span>
+												</div>
+												<div class="sum">
+													<button id="${arr[i].id}" class="add">+</button>
+													<span class="num">${arr[i].num}</span>
+													<button id="${arr[i].id}" class="minus">-</button>
+												</div>
+											</div>
+											<div class="goods_money">￥${money}</div>
+											<button id="${arr[i].id}" class="remove_goods">X</button>
+										</li>	
+									`).appendTo(".car_center")
+								}
+							}
+						}
+						
+					}
+					$(".car_bottom .sum_money").html("￥"+sum)
+				},
+				error:function(error){
+					alert(error)
+				}
+			})
+			}else{
+				$(".car_center").html("")
+			}
+			
+				
+		}
+		
+		//计算商品数量
+		function count(){
+			if($.cookie("goods")){
+				var cookieStr = $.cookie("goods");
+				var arr = eval(cookieStr);
+				var sum = 0;
+				for(var i = 0; i < arr.length;i++){
+					sum += arr[i].num
+				}
+				$(".car_bottom .count .num span").html(sum);
+				$(".right_shopping_left .shopping_car span").html(sum)
+			}else{
+				$(".car_bottom .count .num span").html("0");
+				$(".right_shopping_left .shopping_car span").html("0")
+			}
+				
+		}
+		
+		//计算总价格
+		function sum_money(){
+			var cookieStr = $.cookie("goods");
+			var arr = eval(cookieStr)
+			//计算所有商品的总价格
+			var count = $(".car_center .goods");
+			var sum_money = 0;
+			for(var i = 0; i <　count.length;i++){
+				var one_money = $(".car_center .goods").eq(i).find(".goods_money").text()				
+				one_money = one_money.substring(1,one_money.length)				
+				sum_money += Number(one_money)
+			}
+			$(".car_bottom .sum_money").html("￥" + sum_money)
+			
+		}
+		//购物车加减
+		$(".right_shopping_right").on("click",function(){
+			alert(1)
+			var id = this.id;
+			var cookieStr = $.cookie("goods");
+			var arr = eval(cookieStr)
+			if(this.innerHTML == "+"){
+				for(var i = 0;i < arr.length;i++){
+					if(arr[i].id == id){
+						arr[i].num++;
+						$(this).siblings(".num").html(arr[i].num);
+						$(this).parents(".sum").siblings(".unit_price").find(".txt_num").html(arr[i].num);	
+					}
+				}
+			}else{
+				for(var i = 0;i < arr.length;i++){
+					if(arr[i].id == id){
+						arr[i].num--;
+						if(arr[i].num < 1){
+							
+							arr[i].num = 1;
+							alert("已经是最后一件了")
+						}
+						$(this).siblings(".num").html(arr[i].num);
+						$(this).parents(".sum").siblings(".unit_price").find(".txt_num").html(arr[i].num);
+					}
+				}
+			}	
+			//计算单个商品的总价格
+			//获取当前元素节点的父节点 的兄弟节点
+			var node = $(this).parents(".sum").siblings(".unit_price");
+			//获取父节点中的兄弟节点下的money节点和txt_num节点
+			var money = node.find(".money").html()
+			var num = node.find(".txt_num").html()
+			money = money.substring(1,money.length)
+			//计算总价格
+			var sum = money * num;
+			//改变它的文本
+			$(this).parents(".goods_txt").siblings(".goods_money").html("￥" + sum)
+		
+			$.cookie("goods",JSON.stringify(arr))
+			count()
+			sum_money()
+			
+		})
+		
+		//删除购物车
+		$(".car_center").on("click",".goods .remove_goods",function(){
+			var id = this.id;
+			var cookieStr = $.cookie("goods");
+			var arr = eval(cookieStr);
+			for(var i = 0;i < arr.length;i++){
+				if(arr[i].id == id){
+					arr.splice(i,1)
+				}
+				$(this).parents(".goods").remove()
+			}
+			$.cookie("goods",JSON.stringify(arr))
+			count()
+			sum_money()
+		})
+
+		
