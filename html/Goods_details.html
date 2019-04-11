@@ -2,13 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>商品列表</title>
-		<link rel="stylesheet" href="../css/goods.css" />
-		<link rel="stylesheet" href="../css/iconfont.css" />
+		<title>商品详情</title>
+		<link rel="stylesheet" href="../css/Goods_details.css" />
+		<link rel="stylesheet" type="text/css" href="../css/iconfont.css"/>
 		<script src="../js/jquery-1.11.3.js"></script>
 		<script src="../js/jquery.cookie.js"></script>
-		<script src="../js/goods.js"></script>
-		<script src="../js/parabola.js"></script>
+		<script src="../js/Goods_details.js"></script>
 	</head>
 	<body>
 		<!--	头部导航-->
@@ -147,90 +146,99 @@
 				</div>
 			</div>
 		</div>
-<!--轮播图-->
-	<div class="carousel_box">
-			<ul class="carousel">
-				<li style="background:url('http://img22.iblimg.com/market-2/images/activity/1401685194.jpg');"><a href="#"></a></li>
-				<li style="background:url('http://img23.iblimg.com/market-2/images/activity/317794162.jpg');"><a href="#"></a></li>
-				<li style="background:url('http://img22.iblimg.com/market-2/images/activity/920644239.jpg');"><a href="#"></a></li>
-				<li style="background:url('http://img23.iblimg.com/market-2/images/activity/1913263815.jpg');"><a href="#"></a></li>
-				<li style="background:url('http://img22.iblimg.com/market-2/images/activity/1421397932.jpg');"><a href="#"></a></li>
-				<div class="carousel_nav">
-					<span class="active"></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
+		<!--内容区-->
+		<div class="content_box">
+			<div class="content">
+				<div class="goods_top">
+					<div class="title">
+						<span>生鲜食品></span>
+						<span>新鲜水果></span>
+						<span>第九鲜></span>
+					</div>
+					<div class="logo">
+						<img src="http://img12.iblimg.com/goods-135/images/brand/2019/02/1080881826.jpg" alt="" />
+					</div>
 				</div>
-			</ul>
-	</div>
-<!--商品展示-->
-	<div class="goods_class_box">
-		<ul class="goods_class">
-			<li><a href="#"><img src="http://img22.iblimg.com/market-2/images/activity/991519485.jpg" alt="" /></a></li>
-			<li><a href="#"><img src="http://img23.iblimg.com/market-2/images/activity/608847749.jpg" alt="" /></a></li>
-			<li><a href="#"><img src="http://img22.iblimg.com/market-2/images/activity/624330288.jpg" alt="" /></a></li>
-			<li><a href="#"><img src="http://img23.iblimg.com/market-2/images/activity/429361209.jpg" alt="" /></a></li>
-		</ul>
-	</div>
-	
-	<div class="goods_list_box">
-		<!--抛物线小球-->
-		<div id="ball" style="width: 30px;height: 30px;background: yellow;position: absolute;border-radius: 50%;display: none;"></div>
-		<div class="goods_list1">
-			<div class="goods_title">
-				<h2 class="border">|</h2>
-				<h2 class="classify">MORE 更多商品></h2>
-				<h2 class="title"></h2>
-			</div>
-			<ul class="content">
-				<!--<li>
-					<a href=""><img src="http://Img.iblimg.com/photo-42/2000/2101618313_200x200.jpg" alt="" /></a>
-					<div class="txt">
-						<div class="txt1">
-							<div>哈密码是哪里发看来果然五六年flaw给二高空按客人李康</div>
-							<div>哈哈哈哈哈哈</div>
+				<div class="goods_bottom">
+					<div class="pic">
+						<div class="samll_pic">
+							<img src="" alt="" />
+							<span></span>
 						</div>
-						
-						<div class="txt3"></div>
-						<div class="txt4">
-							<span class="money">￥37.90</span>
-							<span id="" class="goods_car iconfont">&#xe61b;</span>
+						<div class="big_pic">
+							<img src="" alt="" />
 						</div>
 					</div>
-				</li>
-				<li><a href=""><img src="" alt="" /></a></li>
-				<li><a href=""><img src="" alt="" /></a></li>
-				<li><a href=""><img src="" alt="" /></a></li>
-				<li><a href=""><img src="" alt="" /></a></li>
-				<li><a href=""><img src="" alt="" /></a></li>-->
-			</ul>
-		</div>
-		<div class="goods_list1">
-			<div class="goods_title">
-				<h2 class="border">|</h2>
-				<h2 class="classify">MORE 更多商品></h2>
-				<h2 class="title"></h2>
-			</div>
-			<ul class="content">
-				<!--<li>
-					<a href=""><img src="http://Img.iblimg.com/photo-42/2000/2101618313_200x200.jpg" alt="" /></a>
 					<div class="txt">
-						<div class="txt1">
-							<div>哈密码是哪里发看来果然五六年flaw给二高空按客人李康</div>
-							<div>哈哈哈哈哈哈</div>
-						</div>						
-						<div class="txt3"></div>
-						<div class="txt4">
-							<span class="money">￥37.90</span>
-							<span id="" class="goods_car iconfont">&#xe61b;</span>
+						<div class="title">
+							<span>联华自营</span>
+							<h2></h2>
 						</div>
+						<div class="time">
+							<div class="time_left">精选篮筐</div>
+							<div class="time_center">
+								距离活动结束还有：
+								<span>4</span>
+								天
+								<span>10</span>
+								小时
+								<span>26</span>
+								分钟
+								<span>12</span>
+								秒
+							</div>
+							<div class="time_right">更多活动》</div>
+						</div>
+						<div class="money">
+							<span>销售价</span>
+							<h2>8.00</h2>
+						</div>
+						<ul class="shopping">
+							<li class="promotion">
+								<l>促销</l>
+								<span class="minus">[满减]</span>
+								<span>生鲜满79立减20可累计</span>
+							</li>
+							<li class="distribution">
+								<l>配送</l>
+								<span>北京</span>
+								<span>99元免运费</span>
+							</li>
+							<li class="serve">
+								<l>服务</l>
+								<ul class="serve_content">
+									<li>本产品由百联联华提供发货和售后服务</li>
+									<li>
+										<span>冷冻温度-16.3°C</span>
+										<span>全程冷链配送</span>
+									</li>
+									<li>
+										<span>支持到店自提</span>
+										<span>不支持7天无理由退货</span>
+										<span>不支持货到付款</span>
+									</li>
+								</ul>							
+							</li>
+							<li class="shopping_num">
+								<l>购买数量</l>
+								<div class="num">
+									<button>-</button>
+									<span>1</span>
+									<button>+</button>
+								</div>
+								<span class="limit">每件限购9999件，库存26件</sapn>
+							</li>
+							<li class="buy">
+								<l></l>
+								<button>立即购买</button>
+								<button>加入购物车</button>
+							</li>
+						</ul>
 					</div>
-				</li>
-				<li><a href=""><img src="" alt="" /></a></li>-->
-			</ul>
+				</div>
+			</div>
 		</div>
-	</div>
+
 	<!--底部导航-->
 	<div class="footer_nav_box">
 		<div class="footer_nav">

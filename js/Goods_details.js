@@ -1,84 +1,46 @@
 $(function(){
-	var inow = 0;
-	var i = 1;
-	var time = null;
-	$(".carousel").mouseenter(function(){
-		clearInterval(time)
-	})
-	$(".carousel").mouseleave(function(){
-		startMove()
-	})
-	$(".carousel_box .carousel_nav span").mouseenter(function(){
-		clearInterval(time)
-		i++;
-		inow = $(this).index()
-		$(".carousel span").attr("class","")
-		.eq(inow).attr("class","active")
-		$(".carousel li").stop().animate({opacity:0.5,"z-index": 0},300)
-		.eq(inow).stop().animate({opacity:1,"z-index": i},300)	
-	})
+	var oSpan = $(".goods_bottom .samll_pic span")
+	var oImg = $(".goods_bottom .big_pic img")
+	$(".goods_bottom .samll_pic").mouseenter(function(){
+		oSpan.css("display","block")
+		$(".goods_bottom .big_pic").css("display","block")
 	
-	$(".carousel_box .carousel_nav span").mouseleave(function(){
-		startMove()
+	})
+	$(".goods_bottom .samll_pic").mouseleave(function(){
+		oSpan.css("display","none")
+		$(".goods_bottom .big_pic").css("display","none")
+	
 	})
 		
-	
-	startMove()
-	
-	function startMove(){
-		clearInterval(time)
-		time = setInterval(function(){
-			inow++;
-			if(inow == 4){		
-				inow = -1;
-				startMove()
+		$(".goods_bottom .samll_pic").mousemove(function(ev){
+			var l = ev.clientX - 112 - $(".goods_bottom .samll_pic").offset().left;
+			if(l < 0){
+				l = 0;
+			}else if(l > $(".goods_bottom .samll_pic").width() - $(".goods_bottom .samll_pic span").width()){
+				l = $(".goods_bottom .samll_pic").width() - $(".goods_bottom .samll_pic span").width();
 			}
-			
-			$(".carousel span").attr("class","")
-			.eq(inow).attr("class","active")
-			
-			$(".carousel li").stop().animate({opacity:0.5,"z-index": 0},300)
-			.eq(inow).stop().animate({opacity:1,"z-index": i},300)	
-			},2000)
+			var t = ev.pageY - 112 - $(".goods_bottom .samll_pic").offset().top;
+			if(t < 0){
+				t = 0
+			}else if(t > $(".goods_bottom .samll_pic").height() - $(".goods_bottom .samll_pic span").height()){
+				t = $(".goods_bottom .samll_pic").height() - $(".goods_bottom .samll_pic span").height()
+			}
+			oSpan.css("left",l)
+			oSpan.css("top",t)
+			oImg.css("left",-l * 2)
+			oImg.css("top",-t * 2)
+		})
 		
-	}
-})
-//商品列表
-$(function(){
-	$.ajax({
-		url:"../json/shopping.json",
-		success:function(data){
-			for(var i = 0;i < data.length;i++){
-				$(".goods_list_box .goods_list1").eq(i).find(".goods_title .title").html(data[i].title);
-				var node = $(".goods_list_box .goods_list1").eq(i).find(".content")
-				for(var j = 0;j < data[i].goods.length;j++){
-					var oLi = $(`
-						<li>
-					<a href="Goods_details.html"><img src="${data[i].goods[j].img}" alt="" /></a>
-					<div class="txt">
-						<div class="txt1">
-							<div>${data[i].goods[j].txt[0]}</div>
-							<div>${data[i].goods[j].txt[1]}</div>
-						</div>						
-						<div class="txt3"></div>
-						<div class="txt4">
-							<span class="money">${data[i].goods[j].money}</span>
-							<span id="${data[i].goods[j].id}" class="goods_car iconfont">&#xe61b;</span>
-						</div>
-					</div>
-				</li>	
-					`).appendTo(node)
-					
-				}
-				
-			}
-		},
-		error:function(error){
-			alert(error)
-		}
-	})
-	
-	//购物车操作
+		var Goods_cookieStr = $.cookie("Goods_details")
+		var arr = JSON.parse(Goods_cookieStr)
+		
+		$(".content_box .goods_bottom .samll_pic img").attr("src",arr.img)
+		$(".content_box .goods_bottom .big_pic img").attr("src",arr.img)
+		$(".content_box .goods_bottom .txt .title h2").html(arr.title)
+		$(".content_box .goods_bottom .money h2").html(arr.money)
+
+
+		//购物车操作
 		car()
 		count()
 		//点击购物车记录当前商品信息
@@ -349,25 +311,5 @@ $(function(){
 			})
 			
 		}
-	})
-})
-	
-//存入单品信息 在商品详情页面使用
-$(function(){
-	$(".goods_list_box").on("click","li",function(){
-		var img = $(this).find("img").attr("src")
-		var title = $(this).find(".txt1 div:eq(0)").html()	
-		var money = $(this).find(".txt .txt4 .money").html()
-		var obj = {
-			img:img,
-			title:title,
-			money:money
-		}	
-		var str = JSON.stringify(obj)
-		$.cookie("Goods_details",str,{
-			path:"/"
-		})
-		
-		
 	})
 })

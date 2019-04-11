@@ -260,11 +260,11 @@ $(function(){
 			var arr = data;
 			//做v额轮播图
 			for(var i = 0; i < arr[1].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[1].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box2 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[1].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box2 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[1].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[1].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box2 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[1].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box2 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box2")
@@ -282,11 +282,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[2].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[2].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box3 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[2].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box3 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[2].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[2].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box3 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[2].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box3 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box3")
@@ -304,7 +304,7 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[3].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[3].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box4 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[3].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box4 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[3].r_img.length;j++){
@@ -326,7 +326,7 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[4].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[4].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box5 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[4].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box5 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[4].r_img.length;j++){
@@ -348,11 +348,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[5].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[5].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box6 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[5].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box6 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[5].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[5].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box6 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[5].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box6 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box6")
@@ -369,11 +369,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[6].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[6].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box7 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[6].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box7 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[6].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[6].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box7 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[6].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box7 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box7")
@@ -390,11 +390,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[7].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[7].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box8 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[7].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box8 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[7].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[7].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box8 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[7].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box8 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box8")
@@ -411,11 +411,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[8].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[8].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box9 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[8].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box9 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[8].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[8].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box9 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[8].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box9 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box9")
@@ -432,11 +432,11 @@ $(function(){
 			var arr = data;
 			//左侧轮播图
 			for(var i = 0; i < arr[9].l_img.length; i++){
-				$(`<li><a href="#"><img src="${arr[9].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box10 .slideshow")
+				$(`<li><a href="html/goods.html"><img src="${arr[9].l_img[i].img}" alt="" /></a></li>`).appendTo(".goods_box10 .slideshow")
 			}
 			
 			for(var j = 0; j < arr[9].r_img.length;j++){
-				$(`<li><a href=""></a><img src="${arr[9].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box10 .goods_right")
+				$(`<li><a href="html/goods.html"></a><img src="${arr[9].r_img[j].img}" alt="" /></li>`).appendTo(".goods_box10 .goods_right")
 			}
 			//轮播图
 			slideshow(".goods_box10")
